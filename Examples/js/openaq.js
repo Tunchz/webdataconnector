@@ -40,7 +40,7 @@
     // Download the data
     myConnector.getData = function(table, doneCallback) {
         //$.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson", function(resp) {
-        $.getJSON("https://api.openaq.org/v1/measurements?date_from=2019-03-26&parameter=pm25&coordinates=47.597,-122.3197&radius=200000", function(resp) {
+        $.getJSON("https://api.openaq.org/v1/measurements?date_from=2019-03-25&parameter=pm25&coordinates=47.597,-122.3197&radius=200000", function(resp) {
             var feat = resp.results,
                 tableData = [];
 
