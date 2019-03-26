@@ -5,19 +5,27 @@
     // Define the schema
     myConnector.getSchema = function(schemaCallback) {
         var cols = [{
-            id: "id",
+            id: "city",
             dataType: tableau.dataTypeEnum.string
         }, {
-            id: "mag",
-            alias: "magnitude",
+            id: "value",
+            alias: "pm 2.5 value",
             dataType: tableau.dataTypeEnum.float
         }, {
-            id: "title",
-            alias: "title",
+            id: "unit",
+            alias: "unit",
             dataType: tableau.dataTypeEnum.string
         }, {
-            id: "location",
-            dataType: tableau.dataTypeEnum.geometry
+            id: "lat",
+            alias: "latitude",
+            dataType: tableau.dataTypeEnum.float
+        }, {
+            id: "lng",
+            alias: "longitude",
+            dataType: tableau.dataTypeEnum.float
+        }, {
+            id: "date",
+            dataType: tableau.dataTypeEnum.datetime
         }];
 
         var tableSchema = {
@@ -31,17 +39,20 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson", function(resp) {
-            var feat = resp.features,
+        //$.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson", function(resp) {
+        $.getJSON("https://api.openaq.org/v1/measurements?date_from=2019-03-26&parameter=pm25&coordinates=47.597,-122.3197&radius=20000", function(resp) {
+            var feat = resp.results,
                 tableData = [];
 
             // Iterate over the JSON object
             for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
-                    "id": feat[i].id,
-                    "mag": feat[i].properties.mag,
-                    "title": feat[i].properties.title,
-                    "location": feat[i].geometry
+                    "city": feat[i].city,
+                    "value": feat[i].value,
+                    "unit": feat[i].unit,
+                    "lat": feat[i].coordinates.latitude,
+                    "lng": feat[i].coordinates.longitude,
+                    "date": new Date(feat[i].date.local)
                 });
             }
 
