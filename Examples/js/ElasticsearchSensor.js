@@ -4,7 +4,8 @@
 
     // Define the schema
     myConnector.getSchema = function(schemaCallback) {
-        var cols = [{
+        var cols = [
+/*{
             id: "Humidity",
             dataType: tableau.dataTypeEnum.float
         }, {
@@ -16,7 +17,6 @@
             //alias: "unit",
             dataType: tableau.dataTypeEnum.float
         }, 
-/*
 {
             id: "Soil",
             //alias: "latitude",
@@ -63,10 +63,10 @@
             // Iterate over the JSON object
             for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
-                    "Humidity": feat[i]._source.humidity,
+/*                    "Humidity": feat[i]._source.humidity,
                     "Temperature": feat[i]._source.temperature,
                     "Light": feat[i]._source.light,
-/*                    "Soil": feat[i]._source.soil,
+                    "Soil": feat[i]._source.soil,
                     "Wifi": feat[i]._source.wifi_signal,
                     "Wifirssi": feat[i]._source.wifi_rssi,
                     "WaterState": feat[i]._source.water_state,
