@@ -40,8 +40,8 @@
 */
 {
             id: "Timestamp",
-	    alias: "Test",
-            dataType: tableau.dataTypeEnum.datetime
+	    alias: "Test2",
+            dataType: tableau.dataTypeEnum.int
         }];
 
         var tableSchema = {
@@ -57,8 +57,7 @@
     myConnector.getData = function(table, doneCallback) {
         //$.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson", function(resp) {
         $.getJSON("http://122.155.11.34:9200/mysensor/_search?q=*:*&sort=timestamp:desc&size=60", function(resp) {
-            var temp = resp.hits,
-		feat = temp.hits,
+            var feat = resp.hits.hits,
                 tableData = [];
 
             // Iterate over the JSON object
@@ -72,7 +71,7 @@
                     "Wifirssi": feat[i]._source.wifi_rssi,
                     "WaterState": feat[i]._source.water_state,
                     "LightState": feat[i]._source.light_state,
-*/                    "Timestamp": new Date(feat[i]._id)
+*/                    "Timestamp": len+i//new Date(feat[i]._id)
                 });
             }
 
