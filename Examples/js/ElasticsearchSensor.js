@@ -6,15 +6,15 @@
     myConnector.getSchema = function(schemaCallback) {
         var cols = [{
             id: "Humidity",
-            dataType: tableau.dataTypeEnum.int
+            dataType: tableau.dataTypeEnum.float
         }, {
             id: "Temperature",
             //alias: "pm 2.5 value",
-            dataType: tableau.dataTypeEnum.int
+            dataType: tableau.dataTypeEnum.float
         }, {
             id: "Light",
             //alias: "unit",
-            dataType: tableau.dataTypeEnum.int
+            dataType: tableau.dataTypeEnum.float
         }, 
 /*
 {
