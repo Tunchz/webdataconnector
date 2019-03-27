@@ -15,7 +15,9 @@
             id: "Light",
             //alias: "unit",
             dataType: tableau.dataTypeEnum.int
-        }, {
+        }, 
+/*
+{
             id: "Soil",
             //alias: "latitude",
             dataType: tableau.dataTypeEnum.int
@@ -35,7 +37,9 @@
             id: "WaterState",
             alias: "Water State",
             dataType: tableau.dataTypeEnum.int
-        }, {
+        }, 
+*/
+{
             id: "Timestamp",
             dataType: tableau.dataTypeEnum.datetime
         }];
@@ -62,12 +66,12 @@
                     "Humidity": feat[i]._source.humidity,
                     "Temperature": feat[i]._source.temperature,
                     "Light": feat[i]._source.light,
-                    "Soil": feat[i]._source.soil,
+/*                    "Soil": feat[i]._source.soil,
                     "Wifi": feat[i]._source.wifi_signal,
                     "Wifirssi": feat[i]._source.wifi_rssi,
                     "WaterState": feat[i]._source.water_state,
                     "LightState": feat[i]._source.light_state,
-                    "Timestamp": new Date(feat[i]._source.timestamp)
+*/                    "Timestamp": new Date(feat[i]._source.timestamp)
                 });
             }
 
