@@ -40,7 +40,7 @@
 */
 {
             id: "Timestamp",
-	    alias: "Test4",
+	    alias: "Test5",
             dataType: tableau.dataTypeEnum.int
         }];
 
@@ -56,8 +56,8 @@
     // Download the data
     myConnector.getData = function(table, doneCallback) {
         //$.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson", function(resp) {
-        $.getJSON("https://api.openaq.org/v1/measurements?date_from=2019-03-26&parameter=pm25&coordinates=47.597,-122.3197&radius=20000", function(resp) {
-            var feat = resp.results,
+        $.getJSON("http://122.155.11.34:9200/mysensor/_search?q=*:*&sort=timestamp:desc&size=60", function(resp) {
+            var feat = resp.hits.hits,
                 tableData = [];
 
             // Iterate over the JSON object
