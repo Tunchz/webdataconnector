@@ -70,7 +70,7 @@
                     "Wifirssi": feat[i]._source.wifi_rssi,
                     "WaterState": feat[i]._source.water_state,
                     "LightState": feat[i]._source.light_state,
-*/                    "Timestamp": new Date(feat[i]._source.timestamp)
+*/                    "Timestamp": new Date(feat[i]._id)
                 });
             }
 
