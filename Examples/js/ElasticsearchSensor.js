@@ -20,20 +20,20 @@
             //alias: "latitude",
             dataType: tableau.dataTypeEnum.int
         }, {
-            id: "Wifi Signal",
-            //alias: "longitude",
+            id: "Wifi",
+            alias: "Wifi Signal",
             dataType: tableau.dataTypeEnum.int
         }, {
-            id: "Wifi rssi",
-            //alias: "longitude",
+            id: "Wifirssi",
+            alias: "Wifi rssi",
             dataType: tableau.dataTypeEnum.int
         }, {
-            id: "Light State",
-            //alias: "longitude",
+            id: "LightState",
+            alias: "Light State",
             dataType: tableau.dataTypeEnum.int
         }, {
-            id: "Water State",
-            //alias: "longitude",
+            id: "WaterState",
+            alias: "Water State",
             dataType: tableau.dataTypeEnum.int
         }, {
             id: "Timestamp",
@@ -64,9 +64,9 @@
                     "Light": feat[i]._source.light,
                     "Soil": feat[i]._source.soil,
                     "Wifi": feat[i]._source.wifi_signal,
-                    "Wifi rssi": feat[i]._source.wifi_rssi,
-                    "Water State": feat[i]._source.water_state,
-                    "Light State": feat[i]._source.light_state,
+                    "Wifirssi": feat[i]._source.wifi_rssi,
+                    "WaterState": feat[i]._source.water_state,
+                    "LightState": feat[i]._source.light_state,
                     "Timestamp": new Date(feat[i]._source.timestamp)
                 });
             }
