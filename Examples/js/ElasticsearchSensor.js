@@ -40,7 +40,7 @@
 */
 {
             id: "Timestamp",
-	    alias: "Test7",
+	    alias: "Test8",
             dataType: tableau.dataTypeEnum.int
         }];
 
@@ -58,7 +58,7 @@
         //$.getJSON("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson", function(resp) {
         //$.getJSON("http://122.155.11.34:9200/mysensor/_search?q=*:*&sort=timestamp:desc&size=60", function(resp) {
     	d3.json("https://api.openaq.org/v1/measurements?date_from=2019-03-20&parameter=pm25&coordinates=47.597,-122.3197&radius=20000", function(resp) {
-            var feat = resp.hits.hits,
+            var feat = resp.results,
                 tableData = [];
 
             // Iterate over the JSON object
