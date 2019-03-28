@@ -40,7 +40,7 @@
 */
 {
             id: "Timestamp",
-	    alias: "Test5",
+	    alias: "Test6",
             dataType: tableau.dataTypeEnum.int
         }];
 
